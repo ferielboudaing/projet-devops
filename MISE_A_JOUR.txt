@@ -1,0 +1,9 @@
+NOVA - NOUVELLE VERSION
+- Accueil enrichi : présentation, fonctionnalités, fonctionnement et bouton de connexion.
+- Saisie groupée : choix d'une classe et d'une matière, puis tableau TD / TP / Examen pour toute la classe.
+- Pondérations personnalisables par matière : TD, TP et Examen doivent totaliser 100 %.
+- Affectation d'un étudiant à une classe disponible dans le formulaire Utilisateurs.
+INSTALLATION NOUVELLE : importer database.sql.
+MISE À JOUR D'UNE ANCIENNE BASE : exporter d'abord une sauvegarde depuis phpMyAdmin, puis importer upgrade_existing_database.sql. Ne réimportez pas database.sql dans une base déjà utilisée.
+Après la mise à jour, créez les classes, puis réaffectez les étudiants aux classes depuis Utilisateurs.
+Compatible avec les fonctions PHP 5.5 utilisées dans cette version. PHP 5.5 n'est toutefois plus maintenu : ne publiez pas ce site sur Internet.

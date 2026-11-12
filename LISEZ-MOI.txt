@@ -1,0 +1,40 @@
+NOVA - Gestion des notes des étudiants
+=======================================
+
+CONTENU
+- index.php : accueil
+- login.php : connexion par rôle (administrateur, enseignant, étudiant)
+- dashboard.php : tableau de bord selon le rôle
+- users.php : ajout/suppression des enseignants et étudiants (admin)
+- classes.php : gestion des classes (admin)
+- subjects.php : gestion des matières (admin)
+- grades.php : saisie des notes (admin/enseignant)
+- results.php : consultation des résultats (étudiant)
+- database.sql : structure MySQL
+- install.php : création du premier administrateur
+
+INSTALLATION AVEC WAMPSERVER (PHP 5.5.12)
+1. Décompresser le dossier NOVA dans C:\wamp\www\
+   Le chemin doit être : C:\wamp\www\NOVA
+2. Démarrer WampServer et attendre que son icône soit verte.
+3. Ouvrir phpMyAdmin : http://localhost/phpmyadmin
+4. Cliquer sur l'onglet Importer, choisir database.sql, puis Exécuter.
+   Si l'import ne crée pas la base, créer d'abord une base nommée nova_db.
+5. Vérifier config.php : utilisateur root et mot de passe vide par défaut sur WAMP.
+6. Ouvrir : http://localhost/NOVA/install.php
+7. Créer le compte administrateur avec votre nom, e-mail et mot de passe.
+8. Se connecter ici : http://localhost/NOVA/login.php
+9. IMPORTANT : supprimer install.php après la création du compte administrateur.
+
+PREMIÈRE UTILISATION
+1. Connectez-vous comme administrateur.
+2. Ajoutez d'abord les classes et les matières.
+3. Ajoutez les comptes enseignants et étudiants dans Utilisateurs.
+4. Ouvrez Gestion des notes pour saisir les notes.
+5. Déconnectez-vous puis connectez-vous avec le compte étudiant pour consulter les résultats.
+
+REMARQUES
+- La moyenne affichée à l'étudiant est indicative : moyenne simple des évaluations d'une matière, puis moyenne pondérée par les coefficients des matières.
+- Cette première version est un projet pédagogique local. Elle ne contient pas encore l'affectation des étudiants aux classes, les emplois du temps, les réclamations, ni l'export PDF.
+- PHP 5.5.12 est très ancien et n'est plus maintenu. Pour une utilisation réelle ou exposée sur Internet, il faut mettre à niveau PHP. Ne publiez pas cette version sur Internet.
+- Le mot de passe est stocké sous forme de hash avec password_hash/password_verify (disponibles à partir de PHP 5.5).
